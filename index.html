@@ -1,1 +1,37 @@
-hahah
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <link rel="manifest" href="manifest.json">    
+        <style>
+            * {
+                font-family: sans-serif;
+            }
+            img {
+                width: 128px;
+            }
+        </style>
+    </head>
+    <body style="text-align: center">
+        <h1>PREMI!</h1>
+        <div>
+            <audio id="sound1" src="sounds/sound01.mp3" preload="auto"></audio>
+            <img class="button" src="images/red-button.png" onclick="playsound(1)">
+
+            <audio id="sound2" src="sounds/sound02.mp3" preload="auto"></audio>
+            <img class="button" src="images/yellow-button.png" onclick="playsound(2)">
+
+            <audio id="sound3" src="sounds/sound03.mp3" preload="auto"></audio>
+            <img class="button" src="images/green-button.png" onclick="playsound(3)">
+        </div>
+        
+        <script>
+            playsound = (n) => {
+                let sound = document.getElementById('sound' + n);
+                sound.currentTime = 0;
+                sound.play();
+            }
+        </script>
+    </body>
+
+</html>
